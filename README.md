@@ -7,7 +7,7 @@ This repository contains a Gurobi-based implementation for solving the **Mixed F
 
 ### Problem Description
 
-The MFVRPBTW extends the classical Vehicle Routing Problem (VRP) by incorporating several real-world complexities:
+The MFVRPBTW extends the classical Electric Vehicle Routing Problem (EVRP) by incorporating several real-world complexities:
 
 - **Mixed Fleet Operations**: Heterogeneous fleet consisting of Battery Electric Trucks (BET) and Diesel Trucks (DT)
 - **Backhaul Logistics**: Combined delivery and pickup operations with configurable backhaul ratios
