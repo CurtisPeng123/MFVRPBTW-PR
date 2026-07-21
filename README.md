@@ -1,5 +1,5 @@
-# Mixed Fleet Vehicle Routing Problem with Backhauls and Time Windows (MFVRPBTW)
-Gurobi implementation of the Mixed Fleet Vehicle Routing Problem with Backhauls, Time Windows, and Partial Recharging (MFVRPBTW-PR), including Gurobi MILP models, benchmark datasets, and reproducible experiments.
+# Mixed Fleet Vehicle Routing Problem with Backhauls, Time Windows, and Partial Recharging (MFVRPBTW-PR)
+This repository provides the benchmark instances, mathematical programming implementation, and reproducible computational experiments accompanying the paper.
 
 ## Overview
 
@@ -28,43 +28,6 @@ The MFVRPBTW extends the classical Electric Vehicle Routing Problem (EVRP) by in
 - **Charging Infrastructure**: Electric vehicle charging station integration
 - **Route Optimization**: Simultaneous route planning for mixed fleet operations
 
-<!-- ### Technical Implementation
-
-- **Solver**: Gurobi Optimizer (commercial mathematical programming solver)
-- **Language**: Python 3.12+ with Jupyter Notebook interface
-- **Optimization Approach**: Exact mathematical programming formulation
-- **Constraint Handling**: Comprehensive set of operational constraints
-- **Result Visualization**: Route reconstruction and solution analysis
-
-## Installation
-
-### Prerequisites
-
-- Python 3.12 or higher
-- Gurobi Optimizer license (academic or commercial)
-- Jupyter Notebook (optional, for interactive development)
-
-### Dependencies
-
-```bash
-pip install gurobipy numpy
-```
-
-### Setup Instructions
-
-1. **Clone the repository**:
-   ```bash
-   git clone <repository-url>
-   cd MFVRPBTW
-   ```
-
-2. **Install Gurobi**: Follow the official [Gurobi installation guide](https://www.gurobi.com/documentation/) and obtain a valid license
-
-3. **Verify installation**:
-   ```python
-   import gurobipy as gp
-   print(gp.gurobi.version())
-   ``` -->
 
 ## Usage
 
@@ -112,7 +75,7 @@ mfsolver('r102_21', max_c=10, num_b_cus=3)
 2. Execute cells sequentially or modify parameters as needed
 
 3. View results including:
-   - Optimal objective value (total distance)
+   - Optimal objective value
    - CPU time
    - Vehicle routes
    - Customer assignments
@@ -227,32 +190,6 @@ Where:
 - Values (1,2,3, ...) belongs to charging stations or backhaul/linehaul customer nodes
 - Each list represents a complete route starting and ending at the depot
 
-## Configuration
-
-### Solver Parameters
-
-Key Gurobi parameters can be adjusted in the code:
-
-```python
-# Time limit for optimization (seconds)
-model.Params.TimeLimit = 100
-
-# Output verbosity (0 = silent, 1 = normal)
-model.Params.OutputFlag = 0
-```
-
-### Fleet Configuration
-
-The mixed fleet can be customized in the solver:
-
-```python
-fleet = [
-    {"id": "A1", "type": "E", "cap": Q},  # Electric vehicle
-    {"id": "A2", "type": "E", "cap": Q},  # Electric vehicle
-    {"id": "B1", "type": "G", "cap": 10000},  # Diesel vehicle
-    {"id": "B2", "type": "G", "cap": 10000},  # Diesel vehicle
-]
-```
 
 ### Instance Selection
 
@@ -281,32 +218,6 @@ The MFVRPBTW is NP-hard, and solution time scales exponentially with:
 3. **Fleet Sizing**: Use minimal number of vehicles necessary
 4. **Instance Selection**: Choose simpler instances for initial testing
 
-### Memory Requirements
-
-Memory usage depends on:
-- Number of decision variables (scales with O(V×N²))
-- Number of constraints
-- Gurobi solver internal data structures
-
-<!-- ## Citation
-
-If you use this implementation in your research, please cite:
-
-```bibtex
-@article{your_paper,
-  title={Mixed Fleet Vehicle Routing Problem with Backhauls and Time Windows},
-  author={Your Name and Co-authors},
-  journal={Journal Name},
-  year={2026},
-  publisher={Publisher}
-}
-``` -->
-
-## License
-
-This project is provided for academic and research purposes. Please ensure compliance with Gurobi licensing terms for commercial use.
-
-
 <!-- ## Acknowledgments
 
 - Gurobi Optimization for providing the mathematical programming solver
@@ -314,11 +225,7 @@ This project is provided for academic and research purposes. Please ensure compl
 - Research funding agencies and collaborators -->
 
 ## References
-
-1. Gurobi Optimization, LLC. "Gurobi Optimizer Reference Manual." (2024)
-2. Schneider, M., et al. "The Electric Vehicle Routing Problem with Time Windows and Recharging Stations." (2014)
-3. Toth, P., and Vigo, D. "The Vehicle Routing Problem." (2014)
+Schneider, M., Stenger, A., & Goeke, D. (2014). The electric vehicle-routing problem with time windows and recharging stations. Transportation science, 48(4), 500-520.
 
 ---
-
-**Note**: This implementation is part of ongoing research in sustainable logistics and mixed fleet optimization. Results may vary based on instance characteristics and solver configuration.
+**Note**: The implementation includes several solver-oriented reformulations and auxiliary constraints for computational efficiency while remaining mathematically equivalent to the formulation presented in the paper.
