@@ -28,7 +28,7 @@ The MFVRPBTW extends the classical Electric Vehicle Routing Problem (EVRP) by in
 - **Charging Infrastructure**: Electric vehicle charging station integration
 - **Route Optimization**: Simultaneous route planning for mixed fleet operations
 
-### Technical Implementation
+<!-- ### Technical Implementation
 
 - **Solver**: Gurobi Optimizer (commercial mathematical programming solver)
 - **Language**: Python 3.12+ with Jupyter Notebook interface
@@ -64,7 +64,7 @@ pip install gurobipy numpy
    ```python
    import gurobipy as gp
    print(gp.gurobi.version())
-   ```
+   ``` -->
 
 ## Usage
 
